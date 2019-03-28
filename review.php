@@ -10,42 +10,41 @@ if(isset($_GET['id']))
                     $id=$_GET['id'];  }  ?>
         <!DOCTYPE html>
         <html lang="en">
+  <head>
+    <title>Deed Indeed</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
 
-        <head>
-               <meta charset="utf-8">
-    <title>Review Page</title>
-    <link href='https://fonts.googleapis.com/css?family=Raleway|Dosis' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
-    <script type="text/javascript" href="assets/js/modernizr.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/content.css" />
     <script src="assets/js/modernizr.custom.js"></script>
-     <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-67982495-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-    </head>
- <style class="cp-pen-styles">
+  </head>
+
+<style class="cp-pen-styles">
     *,
     *:before,
     *:after {
@@ -67,21 +66,7 @@ if(isset($_GET['id']))
         font-size: 16px;
         text-justify: inter-word;
     }
-    
-    h1 {
-        font-size: 45px;
-        font-family: 'raleway', sans-serif;
-        text-transform: uppercase;
-        color: #FC573A;
-    }
-    
-    h2 {
-        font-size: 24px;
-        font-family: 'dosis', sans-serif;
-        text-transform: uppercase;
-        color: #FC573A;
-    }
-    
+        
     .ques a {
         color: black;
         font-family: 'Open Sans', sans-serif;
@@ -124,13 +109,7 @@ if(isset($_GET['id']))
         font-family: 'Roboto', sans-serif;
     }
     
-    #review h1 {
-        text-align: center;
-        font-size: 50px;
-        font-family: 'raleway', sans-serif;
-        text-transform: uppercase;
-        color: #FC573A;
-    }
+   
     
     .border {
         border: 1px solid black;
@@ -290,20 +269,7 @@ if(isset($_GET['id']))
         margin: 0;
     }
     
-    .button {
-        border: 0;
-        outline: none;
-        border-radius: 0;
-        padding: 15px 0;
-        font-size: 2rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: .1em;
-        background: #1ab188;
-        color: #ffffff;
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
+    
     
     .button:hover,
     .button:focus {
@@ -322,7 +288,7 @@ if(isset($_GET['id']))
 
     .hitbtn {
         position: relative;
-        background: #1E9E53;
+        background: black;
         color: white;
         padding: 0 30px;
         font-family: 'Roboto', sans-serif;
@@ -341,111 +307,42 @@ if(isset($_GET['id']))
         background-color: #CCC;
     }
     </style>
-    <style>
-    @media only screen and (max-width: 768px) {
-    .space {
-        display: none;
-    }
-    #navbar {
-        display: none;
-    }
-    #footer a {
-        height: 500px;
-        color: white;
-    }
-}
 
-@media only screen and (min-width: 768px) {
-    #navmob {
-        display: none;
-    }
-    #footer a {
-        color: white;
-        height: 250px;
-    }
-}
+  <body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DEED INDEED</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
 
-#navmob li {
-    display: inline;
-    float: left;
-    margin-left: 20px;
-}
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="causes.php" class="nav-link">NGOs</a></li>
+          <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-#navmob a {
-    color: #FF746B;
-}
+      <div class="hero-wrap" style="background-image: url('images/goonjbg.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Let's make the world a better place</h1>
+            
 
-#navmob a:hover {
-    color: white;
-}
-</style>
-    <?php 
-if(isset($_GET['id']))
-                {
-                    $id=$_GET['id'];
-                    $query= "SELECT * FROM college_list WHERE clg_id= ".$id." LIMIT 1";
-                    $result= mysqli_query($conn,$query);
-                    $row = mysqli_fetch_assoc($result);
-                    $latitude = $row['latitude'];
-                    $longitude = $row['longitude']; 
-                }
-                ?>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-    function initialize() {
-        var mapCanvas = document.getElementById('map-canvas');
-        var mapOptions = {
-            center: new google.maps.LatLng('<?php echo $latitude; ?>', '<?php echo $longitude; ?>'),
-            zoom: 16,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script> 
-        <body>
-            <!--menu bar-->
-            <section id="navbar">
-        <nav class="navbar navbar-default" style="background-color: #3D3D3D; opacity: 1; text-align: center;border-radius:0px;height: 60px;top: 0;left: 0;width: 100%;z-index: 100;box-shadow: 2px 7px 7px rgba(100,100,100,0.49);border:none;">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php" style="width: 130px;height: 25px; font-family: 'Open Sans', sans-serif;color: #fd5f54; margin-top: 8px; margin-left: 4px;">NGOExplorer</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <div class="menu-menu-glowne-en-container">
-                            <ul id="menu-menu-glowne-en" class="menu">
-                                <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="index.php"><span data-hover="HOME">HOME</span></a></li>
-                                <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="colleges.php"><span data-hover="NGOS">NGOS</span></a></li>
-                                <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="aboutus.php"><span data-hover="ABOUT US">ABOUT US</span></a></li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </section>
-    <section id="navmob">
-        <nav class="navbar navbar-inverse" style="background-color: #343833; text-align: center; width: 100%;">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php" style="font-family: 'Open Sans', sans-serif;color: #FF746B;">CollegExplorer</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">HOME</a></li>
-                        <li><a href="colleges.php">NGOS</a></li>
-                        <li><a href="aboutus.php">ABOUT US</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </section>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://vimeo.com/45830194" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span>Watch Video</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
             <div class="container-fluid" style="padding-left: 40px; padding-right: 20px">
                 <h1 style="text-align: center;"> <?php 
             if(isset($_GET['id']))
@@ -498,24 +395,10 @@ if(isset($_GET['id']))
                         </p>
                         <br>
                         <h2>Financials/Annual report </h2>
-                        <ul style="list-style-type: disc;margin: 0px;padding-left: 35px;overflow: hidden;font-family: 'Roboto', sans-serif;font-size: 16px;color: #0C0C0B;">
-                                   <?php 
-                                    if(isset($_GET['id']))
-                                        {
-                                            $id=$_GET['id'];
-                                            $query= "SELECT * FROM college_list WHERE clg_id= ".$id." LIMIT 1";
-                                            $result= mysqli_query($conn,$query);
-                                            $row = mysqli_fetch_assoc($result);
-                                            $p=explode(",",$row['ug']);
-                                            foreach($p as $value)
-                                            {   
-                                                echo "<li>".$value."</li>"; 
-                                            }  
-                                        }  ?> 
-                        </ul>
-                        <br>
+                        <a href="https://goonj.org/wp-content/uploads/annual-reports/report-2018-new.pdf">Click here for the report!</a>
+                        <br><br>
                         <h2>Awards</h2>
-                        <ul style="list-style-type: disc;margin: 0px;padding-left: 35px;overflow: hidden;font-family: 'Roboto', sans-serif;font-size: 16px;color: #0C0C0B;">
+                        <ul style="list-style-type: disc;margin: 0px;padding-left: 35px;overflow: hidden;font-size: 16px;color: grey;">
                             <?php 
                                     if(isset($_GET['id']))
                                         {
@@ -532,7 +415,7 @@ if(isset($_GET['id']))
                                         </ul>
                         <br>
                         <h2>Supporters</h2>
-                        <ul style="list-style-type: disc;margin: 0px;padding-left: 35px;overflow: hidden;font-family: 'Roboto', sans-serif;font-size: 16px;color: #0C0C0B;">
+                        <ul style="list-style-type: disc;margin: 0px;padding-left: 35px;overflow: hidden;font-size: 16px;color: grey;">
                             <?php 
                                     if(isset($_GET['id']))
                                         {
@@ -546,8 +429,6 @@ if(isset($_GET['id']))
                                                 echo "<li>".$value."</li>"; 
                                             }  
                                         }  ?>                         </ul>
-                        <br>
-                        <br>
                     </div>
                      <div class="col-md-1">
             </div>
@@ -617,13 +498,7 @@ if(isset($_GET['id']))
                             
                 </section>
             </div>
-            <div class="one">
-                <div class="col-md-1">
-                </div>
-                <div class="col-xs-10 col-md-3">
-                    <img src="assets/images/goi.jpg" class="center-block" style="height: 150px; width: 200px; padding-top: 40px;">
-                    <br>
-                    <br>
+            
                     <?php 
               if(isset($_GET['id']))
                 {
@@ -636,34 +511,7 @@ if(isset($_GET['id']))
              ?>  
                     <p style="color: white; text-align: center;">Rank :<?php if($p[0]==-1) echo "Not Available"; else echo $p[0];  ?> </p>
                 </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-xs-10 col-md-3">
-                    <img src="assets/images/ais.png" class="center-block" style="height: 150px; width: 200px; padding-top: 40px;">
-                    <br>
-                    <br>
-                    <p style="color: white; text-align: center;">Rank :<?php if($p[1]==-1) echo "Not Available"; else echo $p[1];?></p>
-                </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-xs-10 col-md-3">
-                    <img src="assets/images/yka.png" class="center-block" style="height: 150px; width: 200px; padding-top: 40px;">
-                    <br>
-                    <br>
-                    <p style="color: white; text-align: center;">Rank :<?php if($p[2]==-1) echo "Not Available"; else echo $p[2];?> </p>
-                </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-xs-10 col-md-3">
-                    <img src="assets/images/smile.jpg" class="center-block" style="height: 150px; width: 200px; padding-top: 40px;">
-                    <br>
-                    <br>
-                    <p style="color: white; text-align: center;">Rank : <?php if($p[3]==-1) echo "Not Available"; else echo $p[3];  ?></p>
-                </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-xs-10 col-md-3" style="background-color:#FBFCF7;">
-                    <br>
+                
                     <?php 
                                     if(isset($_GET['id']))
                                         {
@@ -699,39 +547,7 @@ if(isset($_GET['id']))
             
             <br>
             <br>
-            <div class="quote" style="text-align:center;">
-                <hr>
-                <br>
-                <q>A good, pragmatic and sympathetic review is always a wonderful surprise</q><span> -Joyce Carol</span>
-                <br>
-                <br>
-            </div>
-            <div class="container" style="padding-top: 100px;">
-                <div class="row">
-                    <div class="col-md-1">
-                    </div>
-                    <div class="col-md-9">
-                        <section id="review">
-                            <div class="border">
-                                <br>
-                                <h3 style=" font-size: 20px;font-family: 'dosis',sans-serif;text-transform: uppercase;color: #FC573A;">Foreword</h3>
-                                <p>
-                                   <?php 
-                                    if(isset($_GET['id']))
-                                        {
-                                            $id=$_GET['id'];
-                                            $query= "SELECT * FROM college_list WHERE clg_id= ".$id." LIMIT 1";
-                                            $result= mysqli_query($conn,$query);
-                                            $row = mysqli_fetch_assoc($result);
-                                            echo $row['forward']; 
-                                        } ?> </p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
+            
                <?php
             //session_start();
             if(!isset($_SESSION['user_id']))
@@ -837,52 +653,53 @@ if(isset($_GET['id']))
         </div>
     </div>
     <!-- footer     -->
-    <footer id="footer" style="background-color:#2E3444; margin-top: 30px;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
-                    <div id="footerlogo">
-                        <a href="index.php"><img src="assets/images/ngo.png" alt="responsive-image" style="height:169px; width=169px; align:center; padding-top:20px;"></a>
-                        <ul style="padding-left: 0px; padding-top: 10px; color: white;">&copy; NGOExplorer</ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h3 class="footertitle" style="color:#FF6E49;">LEARN MORE</h3>
-                    <div class="learnmorelinks">
-                        <ul><a href="aboutus.php" style="text-decoration: none;">ABOUT US</a></ul>
-                        <ul><a href="privacy.php" style="text-decoration: none;">PRIVACY POLICY</a></ul>
-                        <ul><a href="terms.php" style="text-decoration: none;">TERMS &amp; CONDITIONS</a></ul>
-                        <ul><a href="disclaimer.php" style="text-decoration: none;">DISCLAIMER</a></ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h3 class="footerTitle" style="color:#FF6E49;">Subscribe </h3>
-                    <form id="footerSignupForm">
-                        <div class="form-group">
-                            <label class="sr-only" for="footerEmailInput"></label>
-                            <input id="footerEmailInput" class="form-control" type="email" placeholder="Email address" aria-required="true" required="">
-                        </div>
-                        <button type="submit" style="background-color: #EEE5E9; border-color:#EEE5E9;">Get all important updates</button>
-                    </form>
-                </div>
-                <div class="col-md-3">
-                    <div id="connectCol">
-                        <h3 class="footerTitle" style="color:#FF6E49;">Connect</h3>
-                        <ul id="footerSocialBtns">
-                            <a id="headerTwBtn" class="headerSocialBtn" href="#" target="_blank"><img src="assets/images/twitter.png" style="height:44px; width:44px;padding-top:10px;"></a>
-                            <a id="headerFbBtn" class="headerSocialBtn" href="#" target="_blank"><img src="assets/images/facebook.png" style="height:44px; width:44px;padding-top:10px;"></a>
-                            <a id="headerliBtn" class="headerSocialBtn" href="#"><img src="assets/images/linkedin.png" style="height:44px; width:44px;padding-top:10px;"></a>
-                            <a id="headergpBtn" class="headerSocialBtn" href="#" target="_blank"><img src="assets/images/googleplus.png" style="height:44px; width:44px;padding-top:10px;"></a>
-                        </ul>
-                        <div id="footerAddress" style=" padding-top:10px;">
-                            <br>
-                            <span id="addressTitle" style="color: white;">NGOExplorer</span>
-                        </div>
-                        <div id="footerEmail"><a href="ngoexplorer@example.com" style="text-decoration: none;">ngoexplorer@example.com</a></div>
-                    </div>
-                </div>
+   <footer class="ftco-footer ftco-section img">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
             </div>
+          </div>
+          
+          <div class="col-md-4">
+             <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Site Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Home</a></li>
+                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="#" class="py-2 d-block">Donate</a></li>
+                <li><a href="#" class="py-2 d-block">Causes</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Block 516, Lake  Garden Office, Andheri West, Mumbai - 400054</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9876543210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@deedindeed.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="assets/js/classie.js"></script>
     <script src="assets/js/uiMorphingButton_fixed.js"></script>

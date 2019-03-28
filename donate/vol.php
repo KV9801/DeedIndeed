@@ -18,11 +18,11 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="images/signup-img.jpg" alt="">
+                    <img src="images/bgvol.jpg" alt="" style="height: 1020px">
                 </div>
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form">
-                        <h2>donation form</h2>
+                        <h2>volunteering form</h2>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">First Name :</label>
@@ -40,60 +40,67 @@
                         <div class="form-radio">
                             <label for="gender" class="radio-label">Gender :</label>
                             <div class="form-radio-item">
-                                <input type="radio" name="gender" id="male" checked>
+                                <input type="radio" name="gender" id="male" value ="Male">
                                 <label for="male">Male</label>
                                 <span class="check"></span>
                             </div>
                             <div class="form-radio-item">
-                                <input type="radio" name="gender" id="female">
+                                <input type="radio" name="gender" id="female" value ="Female">
                                 <label for="female">Female</label>
                                 <span class="check"></span>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="state">State :</label>
-                                <div class="form-select">
-                                    <select name="state" id="state">
-                                        <option value=""></option>
-                                        <option value="us">Maharastra</option>
-                                        <option value="uk">Gujarat</option>
-                                    </select>
-                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">City :</label>
-                                <div class="form-select">
-                                    <select name="city" id="city">
-                                        <option value=""></option>
-                                        <option value="losangeles">Mumbai</option>
-                                        <option value="washington">Ahmedabad</option>
-                                    </select>
-                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="birth_date">DOB :</label>
-                            <input type="text" name="birth_date" id="birth_date">
+                            <input type="date" name="birth_date" id="birth_date">
                         </div>
-                        <div class="form-group">
-                            <label for="pincode">Pincode :</label>
-                            <input type="text" name="pincode" id="pincode">
+                       
+                       <div class="form-group">
+                            <label for="course">Time Slot :</label>
+                            <div class="form-select">
+                                <select name="course" id="course">
+                                    <option value=""></option>
+                                    <option value="computer">10 am - 12 pm</option>
+                                    <option value="computer">12 pm - 2 pm</option>
+                                    <option value="computer">2 pm - 4 pm</option>
+                                    <option value="computer">4 pm - 6 pm</option>
+                                    <option value="computer">6 pm - 8 pm</option>
+                                    
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Start Date :</label>
+                                <input type="date" name="name" id="name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">End Date :</label>
+                                <input type="date" name="name" id="name" required/>
+                            </div>
+                        </div>
+
+
                         <div class="form-group">
                             <label for="course">NGO :</label>
                             <div class="form-select">
                                 <select name="course" id="course">
                                     <option value=""></option>
-                                    <option value="computer">Goonj</option>
-                                    <option value="desiger">Smile Foundation</option>
-                                    <option value="marketing">Helpage India</option>
+                                    <option value="goonj">Goonj</option>
+                                    <option value="smile">Smile Foundation</option>
+                                    <option value="help">Helpage India</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
+
+                       
+
+                        
+
             
                         <div class="form-submit">
                             <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
@@ -106,8 +113,34 @@
 
     </div>
 
-    <!-- JS -->
+    
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+    <?php
+if(isset($_POST["submit"]))
+{
+ 
+ //Including dbconfig file.
+include 'dbconfig.php';
+
+$Fname = $_POST["fname"];
+$Lname = $_POST["lname"];
+$email = $_POST["email"];
+$amount = $_POST["amount"];
+$cno = $_POST["cno"];
+$ngo = $_POST["ngo"];
+$gender = $_POST["gender"];
+
+$query = "INSERT INTO don (firstname,lastname,email,amount,cno,ngo,gender) VALUES ('$Fname','$Lname','$email','$amount','$cno','$ngo','$gender')";
+
+mysqli_query($conn,$query);
+
+echo " Added Successfully ";
+
+}
+
+?>
+
+</body>
 </html>

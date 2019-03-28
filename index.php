@@ -116,7 +116,7 @@ error_reporting(1);
               <div class="text">
                 <h3 class="mb-4">Donate Money</h3>
                 <p>Even the all-powerful Pointing has no control about the blind texts.</p>
-                <p><a href="donate/don.html" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
+                <p><a href="donate/donn.php" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ error_reporting(1);
               <div class="text">
                 <h3 class="mb-4">Be a Volunteer</h3>
                 <p>Even the all-powerful Pointing has no control about the blind texts.</p>
-                <p><a href="#" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
+                <p><a href="donate/vol.php" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
               </div>
             </div>
           </div>
