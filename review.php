@@ -330,7 +330,7 @@ if(isset($_GET['id']))
     </div>
   </nav>
 
-      <div class="hero-wrap" style="background-image: url('images/goonjbg.jpg');" data-stellar-background-ratio="0.5">
+      <div class="hero-wrap" style="background-image: url('images/ngobg.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -343,7 +343,7 @@ if(isset($_GET['id']))
         </div>
       </div>
     </div>
-            <div class="container-fluid" style="padding-left: 40px; padding-right: 20px">
+            <div class="container-fluid" style="padding-left: 40px; padding-right: 40px">
                 <h1 style="text-align: center;"> <?php 
             if(isset($_GET['id']))
                 {
@@ -356,9 +356,9 @@ if(isset($_GET['id']))
                 <div class="row">
                     <br>
                     <br>
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <h2>Mission</h2>
-                        <p>
+                        <p style="color: grey">
                             <?php 
                                 if(isset($_GET['id']))
                                     {
@@ -372,7 +372,7 @@ if(isset($_GET['id']))
                         </p>
                         <br>
                         <h2>Vision</h2>
-                        <p><?php 
+                        <p style="color: grey"><?php 
                             if(isset($_GET['id']))
                             {
                                 $id=$_GET['id'];
@@ -383,7 +383,7 @@ if(isset($_GET['id']))
                             } ?></p>
                         <br>
                         <h2>History</h2>
-                        <p><?php 
+                        <p style="color: grey"><?php 
                                 if(isset($_GET['id']))
                                 {
                                     $id=$_GET['id'];
@@ -392,43 +392,8 @@ if(isset($_GET['id']))
                                     $row = mysqli_fetch_assoc($result);
                                     echo $row['hostel']; 
                                 } ?>
-                        </p>
-                        <br>
-                        <h2>Financials/Annual report </h2>
-                        <a href="https://goonj.org/wp-content/uploads/annual-reports/report-2018-new.pdf">Click here for the report!</a>
-                        <br><br>
-                        <h2>Awards</h2>
-                        <ul style="list-style-type: disc;margin: 0px;padding-left: 35px;overflow: hidden;font-size: 16px;color: grey;">
-                            <?php 
-                                    if(isset($_GET['id']))
-                                        {
-                                            $id=$_GET['id'];
-                                            $query= "SELECT * FROM college_list WHERE clg_id= ".$id." LIMIT 1";
-                                            $result= mysqli_query($conn,$query);
-                                            $row = mysqli_fetch_assoc($result);
-                                            $p=explode(",",$row['ugpg']);  
-                                            foreach($p as $value)
-                                            {   
-                                                echo "<li>".$value."</li>"; 
-                                            }   
-                                        }  ?>  
-                                        </ul>
-                        <br>
-                        <h2>Supporters</h2>
-                        <ul style="list-style-type: disc;margin: 0px;padding-left: 35px;overflow: hidden;font-size: 16px;color: grey;">
-                            <?php 
-                                    if(isset($_GET['id']))
-                                        {
-                                            $id=$_GET['id'];
-                                            $query= "SELECT * FROM college_list WHERE clg_id= ".$id." LIMIT 1";
-                                            $result= mysqli_query($conn,$query);
-                                            $row = mysqli_fetch_assoc($result);
-                                            $p=explode(",",$row['pg']);
-                                            foreach($p as $value)
-                                            {   
-                                                echo "<li>".$value."</li>"; 
-                                            }  
-                                        }  ?>                         </ul>
+                        </p>  
+                        
                     </div>
                      <div class="col-md-1">
             </div>
@@ -488,12 +453,7 @@ if(isset($_GET['id']))
                             </div>
                              <?php 
                         } 
-                        else 
-                        { ?>
-                             
-                              <a href="login.php?id=<?php echo urlencode($id);?>" class="morph-button morph-button-overlay morph-button-fixed"><button type="button" style="border-radius: 2px;">Login To Write a Review</button></a> 
-                         
-                       <?php } 
+                   
                         ?>
                             
                 </section>
@@ -524,16 +484,15 @@ if(isset($_GET['id']))
                                             $email = $row['email']; 
                                         }  ?> 
                     <h2>Contact Info:</h2> <?php for($i=0;$i<sizeof($p); $i++) { ?>
-                    <p><?php echo $p[$i]; ?></p> <?php } ?>  
-                    <p>Phone: <?php  echo $q; ?></p>
-                    <p><a href="mailto:<?php echo $email; ?>" style="text-decoration: none;">Email: <?php echo $email; ?></a></p>
-                    <div id="map-canvas"></div>
+                    <p style="color: grey"><?php echo $p[$i]; ?></p> <?php } ?>  
+                    <p style="color: grey">Phone: <?php  echo $q; ?></p>
+                    <p style="color: grey"><a href="mailto:<?php echo $email; ?>" style="text-decoration: none;">Email: <?php echo $email; ?></a></p>
+                    
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <br>
+
             
             <?php 
               if(isset($_GET['id']))
@@ -544,9 +503,7 @@ if(isset($_GET['id']))
                     $row = mysqli_fetch_assoc($result_date);
                      }
              ?>  
-            
-            <br>
-            <br>
+
             
                <?php
             //session_start();
@@ -556,9 +513,9 @@ if(isset($_GET['id']))
         <div class="logintoask">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-1">
+                    <div class="col-md-5">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-7">
                         <a href="login.php?id=<?php echo urlencode($id);?>"><button type="submit" class="hitbtn" style="text-align: center;">Login to Ask a Question</button></a>
                     </div>  
                 </div>
@@ -620,7 +577,7 @@ if(isset($_GET['id']))
             <div class="col-md-2">
             </div>
             <div class="col-md-8" style="margin-top: 30px;">
-                <h2 style="text-align: center; font-size: 40px;"><b>Question and Answers</b></h2>
+                <h2 >Question and Answers</h2>
                 <br>
                  <?php  
         if(isset($_GET['id'])) {
