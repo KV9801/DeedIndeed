@@ -419,9 +419,9 @@ if(isset($_GET['id']))
                                 }
                             }
                          ?> 
-                    <a href="logout.php"><button type="submit" class="hitbtn" style="text-align: center;">LOGOUT</button></a>
+                    
                     <div class="morph-button morph-button-overlay morph-button-fixed">
-                        <button type="button" style="border-radius: 2px;">Write a Review</button>
+                        <button type="button" style="border-radius: 2px; margin-left: 545px">Write a Review</button>
                          <div class="morph-content">
                             <span class="icon icon-close"></span>
                             <div class="container-fluid">

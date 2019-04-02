@@ -1,38 +1,3 @@
-<?php require_once("connect.php"); ?>
-<?php 
-error_reporting(1);
-  if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['contactno']) && isset($_POST['msg']))
-  {
-    $name =  $_POST['name'];
-    $email=  $_POST['email'];
-    $contactno = $_POST['contactno'];
-    $msg =  $_POST['msg'];
-    if(!empty($name) && !empty($email) && !empty($contactno) && !empty($msg) )
-        {  
-          if(filter_var($email, FILTER_VALIDATE_EMAIL)==true)
-           {          
-             $query = "INSERT INTO contact(name,email,contactno,msg) VALUES ('{$name}','{$email}','{$contactno}','{$msg}')"; 
-             $result = mysqli_query($conn,$query);
-                 if(!$result)
-                  {
-                    die('Error, Please Try Again');  
-                  }
-          }
-          else
-          { 
-            echo "PLEASE ENTER VALID EMAIL";
-          } 
-          /*  Email Validation is done and the values are inserted into the database. 
-          */  
-      }
-      /*  if the user doesn't fill in all the details then, we return a message. 
-      */
-    else
-      {
-          echo " Please Fill In All Details";
-      }  
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -85,7 +50,7 @@ error_reporting(1);
   </nav>
     <!-- END nav -->
     
-    <div class="hero-wrap" style="background-image: url('images/bg_8.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('images/indexbg.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -115,7 +80,7 @@ error_reporting(1);
             <div class="block-18 color-2 align-items-stretch">
               <div class="text">
                 <h3 class="mb-4">Donate Money</h3>
-                <p>An act of kindness lasts long. It gives you a feeling of satisfaction and fulfilment, apart from giving underprivileged children a chance to improve their circumstances and lessen the hardships that they face in their daily lives. </p>
+                <p style="text-align: justify;">An act of kindness lasts long. It gives you a feeling of satisfaction and fulfilment, apart from giving underprivileged children a chance to improve their circumstances and lessen the hardships that they face in their daily lives. </p>
                 <p><a href="donate/donn.php" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
               </div>
             </div>
@@ -124,7 +89,7 @@ error_reporting(1);
             <div class="block-18 color-3 align-items-stretch">
               <div class="text">
                 <h3 class="mb-4">Be a Volunteer</h3>
-                <p>You can play an integral role in growing this movement and redefining the education system in our country.Share your skills to bring arts into a child’s learning also tutor or mentor a child once a week and do your bit for the society.</p>
+                <p style="text-align: justify;">You can play an integral role in growing this movement and redefining the education system in our country.Share your skills to bring arts into a child’s learning also tutor or mentor a child once a week and do your bit for the society.</p>
                 <p><a href="donate/vol.php" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
               </div>
             </div>
@@ -147,10 +112,10 @@ error_reporting(1);
             <div class="carousel-cause owl-carousel">
               <div class="item">
                 <div class="cause-entry">
-                  <a href="#" class="img" style="background-image: url(images/cause-2.jpg);"></a>
+                  <a href="#" class="img" style="background-image: url(images/women.png);"></a>
                   <div class="text p-3 p-md-4">
-                    <h3><a href="#">Clean water for the urban area</a></h3>
-                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                    <h3><a href="#">Women Empowerment</a></h3>
+                    <p>Women empowerment in India is heavily dependent on educational and social status. Policies on women empowerment exist at the national, state, and local levels in many sectors, including health, education and political participation. </p>
                     <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
                     <div class="progress custom-progress-success">
                       <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
@@ -161,7 +126,7 @@ error_reporting(1);
               </div>
               <div class="item">
                 <div class="cause-entry">
-                  <a href="#" class="img" style="background-image: url(images/cause-3.jpg);"></a>
+                  <a href="#" class="img" style="background-image: url(images/c1.jpg);"></a>
                   <div class="text p-3 p-md-4">
                     <h3><a href="#">Education for Underprivileged</a></h3>
                     <p>India’s growth relies on a well-educated and skilled workforce. Improving education is a critical area of investment. A shabby foundation in primary education can overturn the lives of millions of its citizens.</p>
@@ -175,7 +140,7 @@ error_reporting(1);
               </div>
               <div class="item">
                 <div class="cause-entry">
-                  <a href="#" class="img" style="background-image: url(images/cause-4.jpg);"></a>
+                  <a href="#" class="img" style="background-image: url(images/oas.jpg);"></a>
                   <div class="text p-3 p-md-4">
                     <h3><a href="#">Old Age Support</a></h3>
                     <p>Donate and help senior citizens for their nutrition, shelter, medical and ensuring their physical, mental, spiritual and emotional well-being of each senior citizen’s.</p>
@@ -196,44 +161,44 @@ error_reporting(1);
 
     <section class="ftco-gallery">
       <div class="d-md-flex">
-        <a href="images/cause-2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-2.jpg);">
+        <a href="images/c2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/c2.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
         </a>
-        <a href="images/cause-3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-3.jpg);">
+        <a href="images/c3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/c3.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
         </a>
-        <a href="images/cause-4.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-4.jpg);">
+        <a href="images/c4.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/c4.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
         </a>
-        <a href="images/cause-5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-5.jpg);">
+        <a href="images/c_5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/c_5.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
         </a>
       </div>
       <div class="d-md-flex">
-        <a href="images/cause-6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-6.jpg);">
+        <a href="images/c6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/c6.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
         </a>
-        <a href="images/image_3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_3.jpg);">
+        <a href="images/i3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/i3.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
         </a>
-        <a href="images/image_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_1.jpg);">
+        <a href="images/i1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/i1.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
         </a>
-        <a href="images/image_2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_2.jpg);">
+        <a href="images/i2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/i2.jpg);">
           <div class="icon d-flex justify-content-center align-items-center">
             <span class="icon-search"></span>
           </div>
@@ -248,7 +213,7 @@ error_reporting(1);
           <div class="col-md-4">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>DeedIndeed is a social enterprise and online initiative with the goal of increasing the sustainability of NGOs across Mumbai</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -270,7 +235,7 @@ error_reporting(1);
           </div>
           <div class="col-md-4">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <h2 class="ftco-heading-2">Have any Questions?</h2>
               <div class="block-23 mb-3">
                 <ul>
                   <li><span class="icon icon-map-marker"></span><span class="text">Block 516, Lake  Garden Office, Andheri West, Mumbai - 400054</span></li>
@@ -281,13 +246,6 @@ error_reporting(1);
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
         </div>
       </div>
     </footer>
@@ -318,18 +276,3 @@ error_reporting(1);
     
   </body>
 </html>
-<?php 
-error_reporting(1);
-  if(isset($_POST['email']))
-    {
-        $email=  mysqli_real_escape_string($conn,htmlentities($_POST['email']));
-        if(!empty($email))
-          {  
-          if(filter_var($email, FILTER_VALIDATE_EMAIL)==true)
-           {          
-                 $query = "INSERT INTO subscribe(email) VALUES ('{$email}')"; 
-                 $result = mysqli_query($conn,$query);
-          }
-         }
-    } 
-          ?>

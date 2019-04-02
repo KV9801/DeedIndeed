@@ -43,8 +43,7 @@ if(isset($_POST['uname']) && isset($_POST['Fname']) && isset($_POST['Lname']) &&
                 }
     }
 
-else
-echo "<script>alert('Please verify that you are not a Robot.');</script>";
+
 }
 ?>
  <?php 
@@ -102,17 +101,17 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                     
                     a {
                         text-decoration: none;
-                        color: #1ab188;
+                        color: #000000;
                         -webkit-transition: .5s ease;
                         transition: .5s ease;
                     }
                     
                     a:hover {
-                        color: #179b77;
+                        color: #F06E38;
                     }
                     
                     .form {
-                        background: rgba(19, 35, 47, 0.9);
+                        background:#ffaa00 ;
                         padding: 40px;
                         max-width: 600px;
                         margin: 40px auto;
@@ -122,6 +121,8 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                     
                     .tab-group {
                         list-style: none;
+                        border-color:black;
+                        border-width: 50px;
                         padding: 0;
                         margin: 0 0 40px 0;
                     }
@@ -136,8 +137,10 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                         display: block;
                         text-decoration: none;
                         padding: 15px;
-                        background: rgba(160, 179, 176, 0.25);
-                        color: #a0b3b0;
+                        background: #ffffff;
+                        color: #000000;
+                        border-color:black;
+                        border-width: 50px;
                         font-size: 20px;
                         float: left;
                         width: 50%;
@@ -148,13 +151,15 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                     }
                     
                     .tab-group li a:hover {
-                        background: #179b77;
+                        background:#000000 ;
                         color: #ffffff;
                     }
                     
                     .tab-group .active a {
-                        background: #1ab188;
-                        color: #ffffff;
+                        background: ##ffffff;
+                        color: #000000;
+                        border-color:black;
+                        border-width: 50px;
                     }
                     
                     .tab-content > div:last-child {
@@ -165,6 +170,8 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                         text-align: center;
                         color: #ffffff;
                         font-weight: 300;
+                        border-color:black;
+                        border-width: 50px;
                         margin: 0 0 40px;
                     }
                     
@@ -213,7 +220,7 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                         background: none;
                         background-image: none;
                         border: 1px solid #a0b3b0;
-                        color: #ffffff;
+                        color: #000000;
                         border-radius: 0;
                         -webkit-transition: border-color .25s ease, box-shadow .25s ease;
                         transition: border-color .25s ease, box-shadow .25s ease;
@@ -222,7 +229,7 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                     input:focus,
                     textarea:focus {
                         outline: 0;
-                        border-color: #1ab188;
+                        border-color: #F06E38;
                     }
                     
                     textarea {
@@ -253,27 +260,30 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                     
                     .button {
                         border: 0;
-                        outline: none;
+                        outline: black;
                         border-radius: 0;
                         padding: 15px 0;
                         font-size: 2rem;
                         font-weight: 600;
                         text-transform: uppercase;
                         letter-spacing: .1em;
-                        background: #1ab188;
-                        color: #ffffff;
+                        background: #ffffff;
+                        color:#000000 ;
                         -webkit-transition: all 0.5s ease;
                         transition: all 0.5s ease;
                     }
                     
                     .button:hover,
                     .button:focus {
-                        background: #179b77;
+                        background: #000000;
+                        color:#ffffff;
                     }
                     
                     .button-block {
                         display: block;
                         width: 100%;
+                        border-color:black;
+                        border-width: 50px;
                     }
                     
                     .forgot {
@@ -281,7 +291,23 @@ echo "<script>alert('Please verify that you are not a Robot.');</script>";
                         text-align: right;
                     }
                     </style>
-                     
+                     <script src='https://www.google.com/recaptcha/api.js'></script>
+                      <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-67982495-1', 'auto');
+    ga('send', 'pageview');
+    </script>
                 </head>
                 <body>
                     <div class="form">
