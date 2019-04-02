@@ -143,9 +143,6 @@ $gender = $_POST["gender"];
 $query = "INSERT INTO don (firstname,lastname,email,amount,cno,ngo,gender) VALUES ('$Fname','$Lname','$email','$amount','$cno','$ngo','$gender')";
 
 mysqli_query($conn,$query);
-
-echo " Added Successfully ";
-
 }
 
 ?>

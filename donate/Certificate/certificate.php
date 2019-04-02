@@ -1,6 +1,10 @@
 <html>
+<head>
+	    
+    <!--link rel="stylesheet" href="../../css/style.css">-->
+</head>
 
-<body>
+<body style="background-color: #F6F6F6">
 
 	<?php
 // this starts the session
@@ -39,6 +43,14 @@ $_SESSION["course"] = $_POST["course"];
 						
 		<i>Given this day, <?php echo  $now; ?><br>
 		<img src="images/spacer.gif" width="415" height="70">
+		</td>
+	</tr>
+
+</table><br><br><br>
+<table>
+	<tr>
+		<td align="center">
+			<a href="../../index.php"><button class="btn btn-white px-3 py-2 mt-2">Done</button></a>
 		</td>
 	</tr>
 </table>

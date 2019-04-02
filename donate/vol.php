@@ -21,21 +21,22 @@
                     <img src="images/bgvol.jpg" alt="" style="height: 1020px">
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
+                    <a href="../index.php"><img src="images/close.png" alt="" style="height: 30px; width: 30px; float: right; padding-top: 20px; padding-right: 20px"></a>
+                    <form action="../index.php" method="POST" class="register-form" id="register-form">
                         <h2>volunteering form</h2>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">First Name :</label>
-                                <input type="text" name="name" id="name" required/>
+                                <input type="text" name="fname" id="name" required/>
                             </div>
                             <div class="form-group">
                                 <label for="father_name">Last Name :</label>
-                                <input type="text" name="father_name" id="father_name" required/>
+                                <input type="text" name="lname" id="father_name" required/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="address">Email Address :</label>
-                            <input type="text" name="address" id="address" required/>
+                            <input type="text" name="email" id="address" required/>
                         </div>
                         <div class="form-radio">
                             <label for="gender" class="radio-label">Gender :</label>
@@ -59,13 +60,13 @@
                        <div class="form-group">
                             <label for="course">Time Slot :</label>
                             <div class="form-select">
-                                <select name="course" id="course">
+                                <select name="tslot" id="course">
                                     <option value=""></option>
-                                    <option value="computer">10 am - 12 pm</option>
-                                    <option value="computer">12 pm - 2 pm</option>
-                                    <option value="computer">2 pm - 4 pm</option>
-                                    <option value="computer">4 pm - 6 pm</option>
-                                    <option value="computer">6 pm - 8 pm</option>
+                                    <option value="10 am - 12 pm">10 am - 12 pm</option>
+                                    <option value="12 pm - 2 pm">12 pm - 2 pm</option>
+                                    <option value="2 pm - 4 pm">2 pm - 4 pm</option>
+                                    <option value="4 pm - 6 pm">4 pm - 6 pm</option>
+                                    <option value="6 pm - 8 pm">6 pm - 8 pm</option>
                                     
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
@@ -75,11 +76,11 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Start Date :</label>
-                                <input type="date" name="name" id="name" required/>
+                                <input type="date" name="sdate" id="name" required/>
                             </div>
                             <div class="form-group">
                                 <label for="name">End Date :</label>
-                                <input type="date" name="name" id="name" required/>
+                                <input type="date" name="edate" id="name" required/>
                             </div>
                         </div>
 
@@ -87,7 +88,7 @@
                         <div class="form-group">
                             <label for="course">NGO :</label>
                             <div class="form-select">
-                                <select name="course" id="course">
+                                <select name="ngo" id="course">
                                     <option value=""></option>
                                     <option value="goonj">Goonj</option>
                                     <option value="smile">Smile Foundation</option>
@@ -96,11 +97,6 @@
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
-
-                       
-
-                        
-
             
                         <div class="form-submit">
                             <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
@@ -122,22 +118,20 @@ if(isset($_POST["submit"]))
 {
  
  //Including dbconfig file.
-include 'dbconfig.php';
+include 'dbconfigvol.php';
 
 $Fname = $_POST["fname"];
 $Lname = $_POST["lname"];
 $email = $_POST["email"];
-$amount = $_POST["amount"];
-$cno = $_POST["cno"];
+$tslot = $_POST["tslot"];
+$sdate = $_POST["sdate"];
+$edate = $_POST["edate"];
 $ngo = $_POST["ngo"];
 $gender = $_POST["gender"];
 
-$query = "INSERT INTO don (firstname,lastname,email,amount,cno,ngo,gender) VALUES ('$Fname','$Lname','$email','$amount','$cno','$ngo','$gender')";
+$query = "INSERT INTO vol (firstname,lastname,email,tslot,sdate,edate,ngo,gender) VALUES ('$Fname','$Lname','$email','$tslot','$sdate','$edate','$ngo','$gender')";
 
 mysqli_query($conn,$query);
-
-echo " Added Successfully ";
-
 }
 
 ?>
