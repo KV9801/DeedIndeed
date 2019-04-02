@@ -1,28 +1,3 @@
-<?php require_once"connect.php" ?>
-<?php require_once"functions.php" ?>
-<?php 
-                if(isset($_POST['search'])){
-                    $search = $_POST['search'];
-                    if(!empty($search))
-                     {
-                        $search_query ="SELECT * FROM college_list WHERE college_name LIKE '%$search%'";
-                        $query = mysqli_query($conn, $search_query);
-                        if(mysqli_num_rows($query)!==0)
-                         {
-                            while($row = mysqli_fetch_assoc($query))
-                            {
-                                $id = $row['clg_id'];
-                                redirect_to("review.php?id=".urlencode($id));
-                            } 
-                         }
-                      } 
-                } 
-            ?>
-    <?php  
-   $query= "SELECT * FROM college_list";
-   $result= mysqli_query($conn,$query);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -221,23 +196,3 @@
     
   </body>
 </html>
-
-<?php 
-         error_reporting(1);
-         if(isset($_POST['email']))
-         {
-            $email=  mysqli_real_escape_string($conn,htmlentities($_POST['email']));
-            if(!empty($email))
-          {  
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)==true)
-           {          
-               $query = "INSERT INTO subscribe(email) VALUES ('{$email}')"; 
-               $result = mysqli_query($conn,$query);
-               if(!$result)
-                {
-                   die('Error, Please Try Again');  
-                }
-            }
-          }
-          } 
-          ?>
